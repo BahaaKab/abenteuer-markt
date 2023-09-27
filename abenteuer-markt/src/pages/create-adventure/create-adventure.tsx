@@ -1,8 +1,11 @@
 import {Button, Typography} from '@mui/material';
 
+import MainLayout from '../../layouts/main/main-layout';
+
 const CreateAdventure=()=>{
     return(
-        <>
+        <MainLayout>
+            <>
             <p>
                 create adventure apge
             </p>
@@ -10,8 +13,14 @@ const CreateAdventure=()=>{
 
 
             <Typography > 2ere be wael </Typography>
+            <Typography > 2ere be wael </Typography>
+            <Typography > 2ere be wael </Typography>
+            <Typography > 2ere be wael </Typography>
+            <Typography > 2ere be wael </Typography>
+            </>
+           
 
-        </>
+        </MainLayout>
     )
 }
 

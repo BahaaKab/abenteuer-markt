@@ -14,7 +14,7 @@ const Topbar=()=>{
     return(
         <>
         <Box sx={{ flexGrow: 1 }}>
-      <AppBar sx={{backgroundColor:'blue'}} position="static">
+      <AppBar sx={{backgroundColor:blue}} position="static">
         <Toolbar>
           <IconButton
             size="large"
