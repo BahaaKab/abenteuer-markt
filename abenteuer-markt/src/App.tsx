@@ -12,13 +12,10 @@ function App() {
 
             <ThemeProvider theme={theme}>
                 <CssBaseline/>
-           
-           
-    
 
            <CreateAdventure/>
             </ThemeProvider>
-
     );
 }
+
 export default App;

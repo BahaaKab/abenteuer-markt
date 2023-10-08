@@ -8,13 +8,14 @@ import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 
 
+
 const Topbar=()=>{
 
 
     return(
         <>
         <Box sx={{ flexGrow: 1 }}>
-      <AppBar sx={{backgroundColor:'blue'}} position="static">
+      <AppBar sx={{backgroundColor: '#283479' }} position="static">
         <Toolbar>
           <IconButton
             size="large"
@@ -24,10 +25,24 @@ const Topbar=()=>{
             sx={{ mr: 2 }}
         >
           </IconButton>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            News
+          <Typography variant="h6" component="div" sx={{ color: 'white' , flexGrow: 0.1 }}>
+          <Button color="inherit">Startseite</Button>
           </Typography>
-          <Button color="inherit">Login</Button>
+          <Typography variant="h6" component="div" sx={{ color: 'white' , flexGrow: 0.1 }}>
+          <Button color="inherit">Bastel- & DIY-benteuer finden</Button>
+          </Typography>
+          <Typography variant="h6" component="div" sx={{ color: 'white' , flexGrow: 0.1 }}>
+          <Button color="inherit">Login-Bereich</Button>
+          </Typography>
+          <Typography variant="h6" component="div" sx={{ color: 'white' , flexGrow: 0.1 }}>
+          <Button color="inherit">Unsere App</Button>
+          </Typography>
+          <Typography variant="h6" component="div" sx={{ color: 'white' , flexGrow: 1 }}>
+          <Button color="inherit">Kontakt</Button>
+          </Typography>
+
+          <Button sx ={{flexGrow: 0.25}}color="inherit">Profil</Button>
+          <Button color="inherit">Anmelden</Button>
         </Toolbar>
       </AppBar>
     </Box>
