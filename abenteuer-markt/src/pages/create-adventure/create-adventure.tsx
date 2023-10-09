@@ -1,119 +1,120 @@
-import { Button, Typography } from '@mui/material';
-import { Pflicht } from '../../components/topbar';
+import { Button ,Box} from '@mui/material';
+import Pflicht from '../../components/required/Pflicht';
 import MainLayout from '../../layouts/main/main-layout';
-import React, { useState } from 'react';
+import  { useState } from 'react';
+
+
+
+
+const descriptionDefault = {
+    marginBottom: '40px',
+    background: 'transparent',
+    border: '1px solid lightgray',
+    boxShadow: '0 2px 4px rgba(0, 0, 0, 0.05)',
+    outline: 'none',
+    width: '95%',
+    height: '150px',
+    padding: '5px 10px',
+    fontSize: '30px',
+    transition: 'all 1s ease',
+    borderRadius: '5px'
+};
+
+const descriptionFocused = {
+    border: '1px solid black',
+    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)'
+};
+
+
+
+const linkDefault = {
+    marginBottom: '40px',
+    background: 'transparent',
+    border: '1px solid lightgray',
+    boxShadow: '0 2px 4px rgba(0, 0, 0, 0.05)',
+    outline: 'none',
+    width: '95%',
+    padding: '10px',
+    transition: 'all 1s ease',
+    borderRadius: '5px'
+};
+
+const linkFocused = {
+    border: '1px solid black',
+    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)'
+};
+
+
+const photoDefault = {
+    marginBottom: '40px',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    height: '20vh',
+    fontSize: '20px',
+    fontWeight: 'bolder',
+    lineHeight: 1,
+    background: 'transparent',
+    border: '1px solid lightgray',
+    boxShadow: '0 2px 4px rgba(0, 0, 0, 0.05)',
+    outline: 'none',
+    width: '95%',
+    padding: '10px',
+};
+
+const photoFocused = {
+    border: 'dashed',
+    borderWidth: '2px',
+}
+
+const titleDefault = {
+    marginBottom: '40px',
+    background: 'transparent',
+    border: '1px solid lightgray',
+    boxShadow: '0 2px 4px rgba(0, 0, 0, 0.05)',
+    outline: 'none',
+    width: '95%',
+    padding: '10px',
+    transition: 'all 1s ease',
+    borderRadius: '5px'
+};
+
+const titleFocused = {
+    border: '1px solid black',
+    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)'
+};
+
+
+
+const defaultStyle = {
+    color: '#f1c31f',
+    textDecoration: 'underline',
+    fontSize: '25px',
+};
+
+const hoverStyle = {
+    ...defaultStyle,
+    color: 'black',
+};
 
 const CreateAdventure = () => {
 
-    const [buttonClicked, setButtonClicked] = useState(false);
-
-    //-----
-
-    const [inputValue2, setInputValue2] = useState('');
-    const [isFocused2, setIsFocused2] = useState(false);
-
-    const defaultStyle4 = {
-        marginBottom: '40px',
-        background: 'transparent',
-        border: '1px solid lightgray',
-        boxShadow: '0 2px 4px rgba(0, 0, 0, 0.05)',
-        outline: 'none',
-        width: '95%',
-        height: '150px',
-        padding: '5px 10px',
-        fontSize: '30px',
-        transition: 'all 1s ease',
-        borderRadius: '5px'
-    };
-
-    const focusedStyle4 = {
-        border: '1px solid black',
-        boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)'
-    };
-
-    //_-----------------------------
-
-    const [isFocused1, setIsFocused1] = useState(false);
-
-    const [inputValue1, setInputValue1] = useState('');
-
-    const defaultStyle3 = {
-        marginBottom: '40px',
-        background: 'transparent',
-        border: '1px solid lightgray',
-        boxShadow: '0 2px 4px rgba(0, 0, 0, 0.05)',
-        outline: 'none',
-        width: '95%',
-        padding: '10px',
-        transition: 'all 1s ease',
-        borderRadius: '5px'
-    };
-
-    const focusedStyle3 = {
-        border: '1px solid black',
-        boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)'
-    };
-
-    //------------------------
-
-    const [hovered1, setHovered1] = useState(false);
-
-    const defaultStyle2 = {
-        marginBottom: '40px',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        height: '20vh',
-        fontSize: '20px',
-        fontWeight: 'bolder',
-        lineHeight: 1,
-        background: 'transparent',
-        border: '1px solid lightgray',
-        boxShadow: '0 2px 4px rgba(0, 0, 0, 0.05)',
-        outline: 'none',
-        width: '95%',
-        padding: '10px',
-    };
-
-    const focusedStyle2 = {
-        border: 'dashed',
-        borderWidth: '2px',
-    }
-    //---------------------
-    const [inputValue, setInputValue] = useState('');
-    const [isFocused, setIsFocused] = useState(false);
-
-    const defaultStyle1 = {
-        marginBottom: '40px',
-        background: 'transparent',
-        border: '1px solid lightgray',
-        boxShadow: '0 2px 4px rgba(0, 0, 0, 0.05)',
-        outline: 'none',
-        width: '95%',
-        padding: '10px',
-        transition: 'all 1s ease',
-        borderRadius: '5px'
-    };
-
-    const focusedStyle1 = {
-        border: '1px solid black',
-        boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)'
-    };
-
-    //------------
-
     const [hovered, setHovered] = useState(false);
+    const [inputTitle, setInputTitle] = useState('');
+    const [isFocusedTitle, setisFocusedTitle] = useState(false);
+    const [photoClicked, setPhotoClicked] = useState(false);
+    const [isFocusedLink, setisFocusedLink] = useState(false);
+    const [inputLink, setInputLink] = useState('');
+    const [inputDescription, setInputDescription] = useState('');
+    const [isFocusedDescription, setisFocusedDescription] = useState(false);
+    const [CheckmarkClicked, setCheckmarkClicked] = useState(false);
 
-    const defaultStyle = {
-        color: '#f1c31f',
-        textDecoration: 'underline',
-        fontSize: '25px',
-    };
+    
+    
+    
 
-    const hoverStyle = {
-        ...defaultStyle,
-        color: 'black',
-    };
+
+  
 
     return (
         <MainLayout>
@@ -173,11 +174,11 @@ const CreateAdventure = () => {
 
                 <input
                     type="text"
-                    style={isFocused ? { ...defaultStyle1, ...focusedStyle1 } : defaultStyle1}
-                    onFocus={() => setIsFocused(true)}
-                    onBlur={() => setIsFocused(false)}
-                    value={inputValue}
-                    onChange={e => setInputValue(e.target.value)}
+                    style={isFocusedTitle ? { ...titleDefault, ...titleFocused } : titleDefault}
+                    onFocus={() => setisFocusedTitle(true)}
+                    onBlur={() => setisFocusedTitle(false)}
+                    value={inputTitle}
+                    onChange={e => setInputTitle(e.target.value)}
                 />
 
                 <div style={{ fontWeight: 'bolder', marginBottom: '20px' }}>
@@ -185,9 +186,9 @@ const CreateAdventure = () => {
                 </div>
 
                 <Button
-                    style={hovered1 ? { ...defaultStyle2, ...focusedStyle2 } : defaultStyle2}
-                    onMouseEnter={() => setHovered1(true)}
-                    onMouseLeave={() => setHovered1(false)}>
+                    style={photoClicked ? { ...photoDefault, ...photoFocused } : photoDefault}
+                    onMouseEnter={() => setPhotoClicked(true)}
+                    onMouseLeave={() => setPhotoClicked(false)}>
                     LADE EIN FOTO FÜR DAS ABENTEUER HOCH
                 </Button>
 
@@ -198,11 +199,11 @@ const CreateAdventure = () => {
 
                     type="text"
                     placeholder='ex https://www.youtube.com/watch?v=bc123'
-                    style={isFocused1 ? { ...defaultStyle3, ...focusedStyle3 } : defaultStyle3}
-                    onFocus={() => setIsFocused1(true)}
-                    onBlur={() => setIsFocused1(false)}
-                    value={inputValue1}
-                    onChange={e => setInputValue1(e.target.value)}
+                    style={isFocusedLink ? { ...linkDefault, ...linkFocused } : linkDefault}
+                    onFocus={() => setisFocusedLink(true)}
+                    onBlur={() => setisFocusedLink(false)}
+                    value={inputLink}
+                    onChange={e => setInputLink(e.target.value)}
                 />
 
                 <div style={{ fontWeight: 'bolder', marginBottom: '20px' }}>
@@ -211,11 +212,11 @@ const CreateAdventure = () => {
 
                 <textarea
                     rows={1}
-                    style={isFocused2 ? { ...defaultStyle4, ...focusedStyle4 } : defaultStyle4}
-                    onFocus={() => setIsFocused2(true)}
-                    onBlur={() => setIsFocused2(false)}
-                    value={inputValue2}
-                    onChange={e => setInputValue2(e.target.value)}
+                    style={isFocusedDescription ? { ...descriptionDefault, ...descriptionFocused } : descriptionDefault}
+                    onFocus={() => setisFocusedDescription(true)}
+                    onBlur={() => setisFocusedDescription(false)}
+                    value={inputDescription}
+                    onChange={e => setInputDescription(e.target.value)}
                 />
 
 
@@ -248,7 +249,7 @@ const CreateAdventure = () => {
 
                     </div>
 
-                    <div style={{
+                    <Box sx={{
                         display: 'flex',
                         flexDirection: 'column',
                         marginRight: 'auto',
@@ -271,7 +272,7 @@ const CreateAdventure = () => {
                             <option value="Muss">Wenn es schnell gehen muss</option>
 
                         </select>
-                    </div>
+                    </Box>
 
                     <div style={{
                         display: 'flex',
@@ -308,8 +309,8 @@ const CreateAdventure = () => {
                 </div>
 
                 <div style={{ display: 'flex', marginBottom: '100px' }}>
-                    <button
-                        onClick={() => setButtonClicked(prevState => !prevState)}
+                    <Button
+                        onClick={() => setCheckmarkClicked(prevState => !prevState)}
 
                         style={{
                             fontSize: '13px', width: '10px',
@@ -319,8 +320,8 @@ const CreateAdventure = () => {
                             justifyContent: 'center',
                             marginRight: '10px'
                         }}>
-                        {buttonClicked ? '✓' : ' '}
-                    </button>
+                        {CheckmarkClicked ? '✓' : ' '}
+                    </Button>
                     <div>
                         HIERMIT BESTÄTIGE ICH, DASS ICH MIT DEM HINZUFÜGEN DES ABENTEUERS (INKL. HOCHLADEN VON FOTOS) KEINE RECHTE (WIE ZUM BEISPIEL DAS URHEBERRECHT ODER DAS MARKENRECHT) DRITTER VERLETZE UND DIE UNEINGESCHRÄNKTEN NUTZUNGSRECHTE VON TEXT UND BILD ZUR WEITERVERARBEITUNG AN DIE OESTREICHER GMBH (BETREIBER DER PLATTFORM ABENTEUERMARKT.DE) ÜBERTRAGE. <Pflicht />
                     </div>

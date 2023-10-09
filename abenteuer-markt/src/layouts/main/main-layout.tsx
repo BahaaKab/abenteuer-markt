@@ -1,7 +1,7 @@
 
 
 import  { ReactNode } from 'react';
-import Topbar from '../../components/topbar/topbar';
+import Topbar from '../../components/topbar';
 import { Container } from '@mui/material';
 
 type MainLayoutProps={
